@@ -66,3 +66,86 @@ print(matches)  # ["l", "l"]
 
 ## 🧬 Meta Characters
 Here are some of the most commonly used meta characters in regular expressions:
+
+- #### `.` (dot): Matches any single character except newline.
+```bash 
+import re
+
+string = "The quick brown fox jumps over the lazy dog"
+pattern = r".x"  # matches any character followed by "x"
+
+match = re.search(pattern, string)
+print(match.group())  # "fox"
+```
+- #### `^` (caret): Matches the beginning of a string.
+```bash
+import re
+
+string = "The quick brown fox jumps over the lazy dog"
+pattern = r"^The"  # matches the string that starts with "The"
+
+match = re.search(pattern, string)
+print(match.group())  # "The"
+
+```
+- #### `$` (dollar): Matches the end of a string.
+```bash 
+import re
+
+string = "The quick brown fox jumps over the lazy dog"
+pattern = r"dog$"  # matches the string that ends with "dog"
+
+match = re.search(pattern, string)
+print(match.group())  # "dog"
+```
+- #### `*` (asterisk): Matches zero or more occurrences of the preceding character.
+```bash
+import re
+
+string = "abcccdeeeef"
+pattern = r"c*"  # matches zero or more "c"s
+
+match = re.search(pattern, string)
+print(match.group())  # "c" (matches the first occurrence of zero "c"s)
+
+```
+- #### `+` (plus): Matches one or more occurrences of the preceding character.
+```bash
+import re
+
+string = "abcccdeeeef"
+pattern = r"c+"  # matches one or more "c"s
+
+match = re.search(pattern, string)
+print(match.group())  # "ccc" (matches the first occurrence of one or more "c"s)
+```
+- #### `?` (question mark): Matches zero or one occurrences of the preceding character.
+```bash
+import re
+
+string = "abcccdeeeef"
+pattern = r"c?"  # matches zero or one "c"s
+
+match = re.search(pattern, string)
+print(match.group())  # "" (matches the first occurrence of zero "c"s)
+```
+## 🌟 Special Sequences
+Here are some of the most commonly used special sequences in regular expressions:
+
+- `\d`: matches any decimal digit (0-9).
+- `\D`: matches any character that is not a decimal digit.
+- `\w`: matches any alphanumeric character (a-z, A-Z, 0-9, _).
+- `\W`: matches any character that is not alphanumeric.
+- `\s`: matches any whitespace character (space, tab, newline, etc.).
+- `\S`: matches any non-whitespace character.
+- `\b`: matches the boundary between a word and a non-word character.
+- `\B`: matches any position that is not a word boundary.
+
+## 📝 Conclusion
+The re module in Python is a powerful tool for working with regular expressions. Whether you need to search for patterns in a string, replace text, or extract information, re has you covered. With the methods and flags provided by re, you can easily manipulate text and create powerful data processing pipelines in Python.
+
+
+
+
+
+
